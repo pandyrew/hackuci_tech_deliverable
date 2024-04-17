@@ -1,8 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import React, { useEffect, useState} from "react";
-
-
+import Quotes from "../components/quote";
 
 function App() {
 	const [quotesData, setQuotesData] = useState({});
@@ -15,11 +14,7 @@ function App() {
         getData();
     }, []);
 
-	const Testing = ({ singleQuote }) => {
-    return (
-        <div>{singleQuote.name} <div>hi</div> {singleQuote.message}</div>
-    )
-}
+	
 	return (
 		<div className="App">
 			{/* TODO: include an icon for the quote book */}
@@ -39,7 +34,7 @@ function App() {
 			{/* TODO: Display the actual quotes from the database */}
 			<div className="messages">
 				{Object.entries(quotesData).map(([key, value]) => (
-    				<Testing key={key} singleQuote={value} />
+    				<Quotes key={key} singleQuote={value} />
 				))}
 			</div>
 		</div>
