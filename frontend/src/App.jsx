@@ -1,6 +1,15 @@
 import "./App.css";
+import axios from "axios";
+import React, { useEffect } from "react";
 
 function App() {
+	useEffect(() => {
+        const getData = async () => {
+            const quotes = await axios.get('/api/quote');
+            console.log(quotes.data);
+        };
+        getData();
+    }, []);
 	return (
 		<div className="App">
 			{/* TODO: include an icon for the quote book */}
