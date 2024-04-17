@@ -69,29 +69,92 @@
 
 
 .input {
-    height: 500px;
+    font-family: ChivoLight;
+    height: 300px;
     border-bottom: 3px solid #D9D9D9;
     padding-top: 20px;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 .input-text-area {
-    background-color: red;
-    height: auto;
-    width: auto;
-    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
 }
 .input-text {
-    font-family: ChivoLight;
+    width: 100%;
+    text-align: right;
     font-size: 50px;
     color: #101211;
-    right: 0;
-    position: absolute;
 }
 .input-under-text {
-    font-family: ChivoLight;
     font-size: 18px;
     color: #8A8A8A;
-    position: absolute;
-    top: 70px;
-    right: 0;
+    width: 100%;
+    text-align: right;
 }
+.input-name {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.input-name-text{
+    font-size: 25px;
+    color: #626262;
+    margin-bottom: 8px;
+    width: 130px;
+}
+.input-name-field{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    border: 3px solid #D9D9D9;
+}
+.input-description {
+    font-family: ChivoLight;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.input-description-text{
+    font-size: 25px;
+    color: #626262;
+    width: 130px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.input-description-field{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    border: 3px solid #D9D9D9;
+}
+.input-submit{
+    font-size: 18px;
+    color: #8A8A8A;
+    width: 10%;
+    right:0;
+    bottom:15px;
+    position: absolute;
+    border-radius: 10px;
+    border: 3px solid #D9D9D9;
+    padding: 10px;
+    text-align: center;
+    transition: border 200ms;
+}
+.input-submit:hover{
+    border: 3px solid #ABABAB;
+}
+
