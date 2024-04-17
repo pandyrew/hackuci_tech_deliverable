@@ -1,15 +1,25 @@
 import "./App.css";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState} from "react";
+
+
 
 function App() {
+	const [quotesData, setQuotesData] = useState({});
 	useEffect(() => {
         const getData = async () => {
             const quotes = await axios.get('/api/quote');
-            console.log(quotes.data);
+            setQuotesData(quotes.data);
+			console.log(quotesData);
         };
         getData();
     }, []);
+
+	const Testing = ({ singleQuote }) => {
+    return (
+        <div>{singleQuote.name} <div>hi</div> {singleQuote.message}</div>
+    )
+}
 	return (
 		<div className="App">
 			{/* TODO: include an icon for the quote book */}
@@ -28,9 +38,9 @@ function App() {
 			<h2>Previous Quotes</h2>
 			{/* TODO: Display the actual quotes from the database */}
 			<div className="messages">
-				<p>Peter Anteater</p>
-				<p>Zot Zot Zot!</p>
-				<p>Every day</p>
+				{Object.entries(quotesData).map(([key, value]) => (
+    				<Testing key={key} singleQuote={value} />
+				))}
 			</div>
 		</div>
 	);
