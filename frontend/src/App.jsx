@@ -3,6 +3,8 @@ import axios from "axios";
 import React, { useEffect, useState} from "react";
 import Quotes from "../components/quote";
 import Navbar from "../components/navbar";
+import Hero from "../components/hero";
+import Input from "../components/input";
 
 function App() {
 	const [quotesData, setQuotesData] = useState({});
@@ -17,10 +19,12 @@ function App() {
 	
 	return (
 		<div className="App">
-			{/* TODO: include an icon for the quote book */}
 			<Navbar></Navbar>
-			<div className="Inside">
-			hi
+			<div className="View">
+				<div className="Inside">
+					<Hero></Hero>
+					<Input></Input>
+				</div>
 			</div>
 			
 		</div>
