@@ -6,7 +6,7 @@ export const Input = () => {
         <div className="input-text-area">
             <div className="input-name">
                 <div className="input-name-text">name:</div>
-                <div className="input-name-field" />
+                <textarea rows='1' className="input-name-field" />
             </div>
             <div className="input-description">
                 <div className="input-description-text">quote:
@@ -14,7 +14,7 @@ export const Input = () => {
 
                 </div>
                 </div>
-                <div className="input-description-field" />
+                <textarea className="input-description-field" />
             </div>
         </div>
         <div className="input-text-area">
@@ -28,7 +28,7 @@ export const Input = () => {
             </div>
             <div className="input-submit">
                     submit
-                </div>
+            </div>
         </div>
     </div>
   )
