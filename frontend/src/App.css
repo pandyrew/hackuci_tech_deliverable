@@ -1,0 +1,37 @@
+.messages {
+}
+
+.navbar {
+    font-family: ChivoLight;
+    height: 50px;
+    border-bottom: 4px solid #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbarPart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 130px;
+    
+}
+
+.navbarPart a { 
+    text-decoration: none;
+    color: #101211;
+}
+
+.Inside {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(135, 135, 255);
+}
+
+.App {
+    width: 100%;
+    height: 100%;
+}
