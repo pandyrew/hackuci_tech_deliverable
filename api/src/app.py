@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import TypedDict
 
 from fastapi import FastAPI, Form, status, Body
@@ -48,9 +48,23 @@ def post_message(name: str = Body(...), message: str = Body(...)) -> RedirectRes
 
 
 @app.get("/quote")
-def get_messages() -> list[Quote]:
-    """
-    Retrieve all quotes.
-    You should not modify this function.
-    """
-    return database["quotes"]
+def get_messages(time_period: str = None) -> list[Quote]:
+    quotes = database["quotes"]
+    if time_period:
+        now = datetime.now().replace(microsecond=0)
+
+        if time_period == 'week':
+            start_time = now - timedelta(days=7)
+            print(start_time)
+        elif time_period == 'month':
+            start_time = now - timedelta(days=30)
+        elif time_period == 'year':
+            start_time = now - timedelta(days=365)
+        elif time_period == '5':
+            start_time = now - timedelta(days=1825)
+        elif time_period == '100':
+            start_time = now - timedelta(days=36500)
+
+
+        quotes = [quote for quote in quotes if datetime.fromisoformat(quote['time']) >= start_time]
+    return quotes

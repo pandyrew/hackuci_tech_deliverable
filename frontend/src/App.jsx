@@ -5,14 +5,17 @@ import Quotes from "../components/quote";
 import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import Input from "../components/input";
+import Options from "../components/options";
 
 function App() {
 	const [quotesData, setQuotesData] = useState({});
     const [submitCount, setSubmitCount] = useState(0);
 	console.log('dont log more than once');
 
-	const getData = async () => {
-            const quotes = await axios.get('/api/quote');
+	const getData = async (time = null) => {
+		console.log(quotesData)
+			const url = time ? `/api/quote?time_period=${time}` : '/api/quote';
+            const quotes = await axios.get(url);
             setQuotesData(quotes.data);
 			console.log(quotes.data)
         };
@@ -32,6 +35,12 @@ function App() {
 		console.log('submitted')
     }
 	const quotesArray = Object.values(quotesData);
+	function handleClick(time){
+        return async () => {
+            console.log(time)
+			await getData(time);
+        }
+    }
 
 	
 	return (
@@ -41,7 +50,8 @@ function App() {
 				<div className="Inside">
 					<Hero></Hero>
 					<Input handleSubmit={handleSubmit}></Input>
-					<div className="quote-book">quote book</div>
+					<div className="quote-book">quote book<div></div></div>
+					<Options handleClick={handleClick}></Options>
 					{quotesArray.map((quote, index) => (
                     	<Quotes key={index} quote={quote}></Quotes>
                 	))}

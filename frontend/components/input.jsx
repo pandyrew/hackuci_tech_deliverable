@@ -19,7 +19,7 @@ export const Input = ({ handleSubmit }) => {
         <div className="input-text-area">
             <div className="input-name">
                 <div className="input-name-text">name:</div>
-                <textarea type="text"  onChange={(e)=>handleChangeName(e)} rows='1' className="input-name-field" />
+                <textarea type="text" onChange={(e)=>handleChangeName(e)} rows='1' className="input-name-field" />
             </div>
             <div className="input-description">
                 <div className="input-description-text">quote:
