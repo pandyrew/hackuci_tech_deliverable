@@ -9,7 +9,7 @@ export const Hero = () => {
             </div>
             <div className="hero-under-text">tech deliverable
             </div>
-            <img src='./public/logo.png' className="hero-logo"/>
+            <img src='/logo.png' className="hero-logo"/>
         </div>
     </div>
   )

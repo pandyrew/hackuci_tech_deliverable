@@ -1,14 +1,14 @@
 @font-face {
 	font-family: Chivo;
-	src: url(public/Chivo-Regular.ttf);
+	src: url(Chivo-Regular.ttf);
 }
 @font-face {
 	font-family: ChivoThin;
-	src: url(public/Chivo-Thin.ttf);
+	src: url(Chivo-Thin.ttf);
 }
 @font-face {
 	font-family: ChivoLight;
-	src: url(public/Chivo-Light.ttf);
+	src: url(Chivo-Light.ttf);
 }
 :root {
 	font-family: Chivo, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

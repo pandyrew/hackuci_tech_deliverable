@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios';
 
-export const Input = () => {
+export const Input = ({ handleSubmit }) => {
+    const [userName, setUserName] = useState('');
+    const [quote, setQuote] = useState('');
+    const [submitCount, setSubmitCount] = useState(0);
+    function handleChangeQuote(e) {
+        setQuote(e.target.value);
+        console.log(quote)
+    }
+    function handleChangeName(e) {
+        setUserName(e.target.value);
+        console.log(userName)
+    }
+
   return (
     <div className="input">
         <div className="input-text-area">
             <div className="input-name">
                 <div className="input-name-text">name:</div>
-                <textarea rows='1' className="input-name-field" />
+                <textarea type="text"  onChange={(e)=>handleChangeName(e)} rows='1' className="input-name-field" />
             </div>
             <div className="input-description">
                 <div className="input-description-text">quote:
-                <div className='input-description-push'>
+                <a className='input-description-push'>
 
+                </a>
                 </div>
-                </div>
-                <textarea className="input-description-field" />
+                <textarea type="text" onChange={(e)=>handleChangeQuote(e)} className="input-description-field" />
             </div>
         </div>
         <div className="input-text-area">
@@ -23,12 +36,12 @@ export const Input = () => {
                     send a quote
                 </div>
                 <div className="input-under-text">
-                    leave your mark on this world. change someones life
+                    leave your mark on this world. change someones life.
                 </div>
             </div>
-            <div className="input-submit">
+            <a onClick={() => handleSubmit(userName, quote)} className="input-submit">
                     submit
-            </div>
+            </a>
         </div>
     </div>
   )
