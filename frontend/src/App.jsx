@@ -9,19 +9,27 @@ import Input from "../components/input";
 function App() {
 	const [quotesData, setQuotesData] = useState({});
     const [submitCount, setSubmitCount] = useState(0);
+	console.log('dont log more than once');
 
-	useEffect(() => {
-        const getData = async () => {
+	const getData = async () => {
             const quotes = await axios.get('/api/quote');
             setQuotesData(quotes.data);
 			console.log(quotes.data)
         };
+
+
+	useEffect(() => {
         getData();
     }, [submitCount]);
+
 	async function handleSubmit(userName, quote) {
-        const res = await axios.post('/api/quote', {name: userName, message: quote});
-        console.log(res)
+		if (userName === '' || quote === '') {
+			return;
+		}
+		getData();
+        await axios.post('/api/quote', {name: userName, message: quote});
         setSubmitCount(prevCount => prevCount + 1);
+		console.log('submitted')
     }
 	const quotesArray = Object.values(quotesData);
 
@@ -38,9 +46,8 @@ function App() {
                     	<Quotes key={index} quote={quote}></Quotes>
                 	))}
 				</div>
-
+				<div className="Footer">made by andrew. this is a foot</div>
 			</div>
-			
 		</div>
 	);
 }

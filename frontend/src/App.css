@@ -15,6 +15,19 @@
     gap: 20px;
     margin-top: 50px;
 }
+.Footer {
+    width: 100%;
+    height: 100px;
+    border-top: 3px solid #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: ChivoLight;
+    font-size: 17px;
+    color: #8A8A8A;
+    margin-top: 100px;
+
+}
 
 
 .navbar {
@@ -26,6 +39,10 @@
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
+    transition: border 200ms;   
+}
+.navbar:hover{
+    border-bottom: 3px solid #E9ADB6;
 }
 .navbarPart {
     display: flex;
@@ -37,6 +54,10 @@
 .navbarPart a { 
     text-decoration: none;
     color: #101211;
+    transition: color 200ms;
+}
+.navbarPart a:hover{ 
+    color: #E9ADB6;
 }
 
 
@@ -124,6 +145,11 @@
     border: 3px solid #D9D9D9;
     resize: none;
     padding: 5px;
+    transition: border 200ms;
+}
+.input-name-field:focus {
+    border: 3px solid #E9ADB6;
+    outline: none;
 }
 .input-description {
     font-family: ChivoLight;
@@ -153,10 +179,15 @@
     resize: none;
     padding: 5px;
     font-size: 25px;
+    transition: border 200ms;
+}
+.input-description-field:focus{
+    border: 3px solid #E9ADB6;
+    outline:none;
 }
 .input-submit{
     font-size: 18px;
-    color: #8A8A8A;
+    color: #e8b1b9;
     width: 10%;
     right:0;
     bottom:30px;
@@ -168,7 +199,7 @@
     transition: border 200ms;
 }
 .input-submit:hover{
-    border: 3px solid #ABABAB;
+    border: 3px solid #E9ADB6;
 }
 .quote-book{
     font-family: ChivoLight;
@@ -183,10 +214,21 @@
     width: 50%;
     left: 25%;
     font-size: 17px;
-    color: #101211;
+    color: #575757;
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
     border-top: 3px solid #D9D9D9;
     position: relative;
+}
+.quote-name{
+    font-family: Chivo;
+    font-size: 18px;
+    color: #101211;
+}
+.quote-time{
+    font-family: ChivoLight;
+    font-size: 15px;
+    color: #8A8A8A;
+
 }
