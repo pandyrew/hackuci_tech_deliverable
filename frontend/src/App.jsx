@@ -27,12 +27,11 @@ function App() {
 
 	async function handleSubmit(userName, quote) {
 		if (userName === '' || quote === '') {
+			alert('bro fill the things out????');
 			return;
 		}
 		getData();
         await axios.post('/api/quote', {name: userName, message: quote});
-        setSubmitCount(prevCount => prevCount + 1);
-		console.log('submitted')
     }
 	const quotesArray = Object.values(quotesData);
 	function handleClick(time){
